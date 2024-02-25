@@ -1,0 +1,79 @@
+@import url("https://cdn-uicons.flaticon.com/2.1.0/uicons-regular-rounded/css/uicons-regular-rounded.css");
+* {
+  min-width: none;
+  min-height: none;
+  box-sizing: border-box;
+}
+body {
+  color: white;
+  background-color: black;
+  margin: 0;
+  font-family: "Poppins";
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.main {
+  padding: 2px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.clock {
+  height: 200px;
+  width: 320px;
+  position: relative;
+}
+.time {
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.time span {
+  font-size: 120px;
+}
+.quotes {
+  position: fixed;
+  bottom: 10px;
+}
+.quotes span {
+  font-size: 14px;
+}
+.greeting {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.greeting span {
+  font-size: 22px;
+}
+.weather {
+  height: 50px;
+  width: 50px;
+  position: fixed;
+  right: 10px;
+  top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.temperature {
+  display: flex;
+  font-size: 12px;
+  align-items: center;
+}
+.icons {
+  height: 25px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+}
