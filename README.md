@@ -6,3 +6,5 @@
 ### Features / Sort of
 - Updates the background image daily
 - Random quotes on every reload
+- Change your city for the Weather (inside script.js)
+- Change name for greetings (inside script.js)
