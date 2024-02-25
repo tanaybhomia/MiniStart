@@ -36,14 +36,15 @@ body {
   justify-content: center;
 }
 .time span {
-  font-size: 120px;
+  font-size: 144px;
 }
 .quotes {
   position: fixed;
   bottom: 10px;
 }
 .quotes span {
-  font-size: 14px;
+  font-size: 12px;
+  font-weight: 300;
 }
 .greeting {
   display: flex;

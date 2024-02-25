@@ -1,10 +1,11 @@
 "use strict";
+
 // Change values according to your liking
 const name = "Tanay";
 const city = "Mumbai";
 
 // Change the values below to your liking
-const type = "Mountains";
+const type = "River";
 const accessKey = "Ylxye9W78-qmdBwcTVEmYOgJRM3k6A9_ZxAxygj1FYg";
 const localStorageKey = "backgroundImage";
 
@@ -13,8 +14,7 @@ function setBackgroundImage(imageUrl) {
   img.onload = function () {
     document.body.style.backgroundImage = `url(${imageUrl})`;
 
-    // Apply fade-in animation to the entire body
-    document.body.style.transition = "opacity 2s"; // Increase duration to 1s
+    document.body.style.transition = "opacity 2s";
     document.body.style.opacity = 1;
   };
   img.src = imageUrl;
@@ -56,6 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
   checkLocalImage();
 });
 
+// Updating Clock
 function updateTime() {
   var now = new Date();
 
@@ -73,11 +74,11 @@ startClock();
 
 // Updating greetings
 const greetings = [
-  "Hello, ",
-  "Find a way, ",
-  "Have a nice day, ",
-  "Stay positive, ",
-  "Work hard",
+  "Hello ",
+  "Find a way ",
+  "Have a nice day ",
+  "Stay positive ",
+  "Work hard ",
 ];
 const names = "Tanay";
 
@@ -105,3 +106,17 @@ function updateTimeAndGreetings() {
 
 updateTimeAndGreetings();
 setInterval(updateTimeAndGreetings, 60000);
+
+// Updating Quotes
+function fetchRandomQuote() {
+  fetch("https://api.quotable.io/random")
+    .then((response) => response.json())
+    .then((data) => {
+      const quoteElement = document.getElementById("randomquote");
+      quoteElement.innerText = `"${data.content}"`;
+    })
+    .catch((error) => {
+      console.error("Error fetching quote:", error);
+    });
+}
+fetchRandomQuote();
