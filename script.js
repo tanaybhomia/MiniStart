@@ -13,9 +13,13 @@ function setBackgroundImage(imageUrl) {
   const img = new Image();
   img.onload = function () {
     document.body.style.backgroundImage = `url(${imageUrl})`;
+    document.body.style.backdropFilter = "blur(20px)";
 
-    document.body.style.transition = "opacity 2s";
+    document.body.style.transition = "opacity 1s";
     document.body.style.opacity = 1;
+    document.getElementById(
+      "unsplashlink"
+    ).innerHTML = `<a href="${imageUrl}" target="_blank">Link</a>`;
   };
   img.src = imageUrl;
 }
@@ -120,3 +124,20 @@ function fetchRandomQuote() {
     });
 }
 fetchRandomQuote();
+
+// Getting weather
+const apiKey = "ac0c749c39902294bc480c2498be98d1";
+
+fetch(
+  `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`
+)
+  .then((response) => response.json())
+  .then((data) => {
+    const cityName = data.name;
+    const temperature = Math.round(data.main.temp);
+
+    document.getElementById("temps").textContent = `${temperature} °C`;
+  })
+  .catch((error) => {
+    console.error("Error fetching weather data:", error);
+  });

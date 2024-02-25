@@ -41,6 +41,7 @@ body {
 .quotes {
   position: fixed;
   bottom: 10px;
+  overflow: hidden;
 }
 .quotes span {
   font-size: 12px;
@@ -91,4 +92,8 @@ body {
 }
 .photolink span {
   font-size: 12px;
+}
+.photolink a {
+  color: white;
+  text-decoration: none;
 }
