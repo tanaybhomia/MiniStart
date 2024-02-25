@@ -1,4 +1,7 @@
 "use strict";
+// Change values according to your liking
+const name = "Tanay";
+const city = "Mumbai";
 
 // Change the values below to your liking
 const type = "Mountains";
@@ -52,3 +55,53 @@ document.addEventListener("DOMContentLoaded", () => {
 
   checkLocalImage();
 });
+
+function updateTime() {
+  var now = new Date();
+
+  var hours = ("0" + now.getHours()).slice(-2);
+  var minutes = ("0" + now.getMinutes()).slice(-2);
+
+  document.getElementById("currentTime").innerText = hours + ":" + minutes;
+}
+updateTime();
+
+function startClock() {
+  setInterval(updateTime, 1000);
+}
+startClock();
+
+// Updating greetings
+const greetings = [
+  "Hello, ",
+  "Find a way, ",
+  "Have a nice day, ",
+  "Stay positive, ",
+  "Work hard",
+];
+const names = "Tanay";
+
+function getRandomGreeting() {
+  const randomIndex = Math.floor(Math.random() * greetings.length);
+  return greetings[randomIndex];
+}
+function updateTimeAndGreetings() {
+  const now = new Date();
+  const currentHour = now.getHours();
+  let greeting;
+
+  if (currentHour < 12) {
+    greeting = "Good morning";
+  } else if (currentHour < 18) {
+    greeting = "Good afternoon";
+  } else {
+    greeting = "Good evening";
+  }
+  const randomGreeting = getRandomGreeting();
+
+  const combinedGreeting = `${randomGreeting}, ${names}!`;
+  document.getElementById("greetings").textContent = combinedGreeting;
+}
+
+updateTimeAndGreetings();
+setInterval(updateTimeAndGreetings, 60000);
